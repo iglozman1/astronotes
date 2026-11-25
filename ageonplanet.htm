@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Enter your Earth age</title>
+<style type="text/css">
+.style1 {
+	text-align: left;
+}
+.style2 {
+	text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<form id="age" name="age">
+	<div class="style1">
+		<h1 class="featuretitle">Planetary Years </h1>
+		<p class="mainbody">A year is the time is takes a planet to orbit the 
+		sun. Calculate what your age would be on other planets in the
+		<a id="KonaLink0" class="kLink" href="http://mistupid.com/astronomy/ageonplanets.htm#" style="text-decoration: underline ! important; position: static;" target="undefined">
+		<font color="#009900" style="color: rgb(0, 153, 0) ! important; font-family: Arial,Helvetica,sans-serif; font-weight: 400; font-size: 17px; position: static;">
+		<span class="kLink" style="color: rgb(0, 153, 0) ! important; font-family: Arial,Helvetica,sans-serif; font-weight: 400; font-size: 17px; position: relative;">
+		solar </span>
+		<span class="kLink" style="color: rgb(0, 153, 0) ! important; font-family: Arial,Helvetica,sans-serif; font-weight: 400; font-size: 17px; position: relative;">
+		system</span></font></a>. </p>
+		<p align="center" class="mainbody">Enter your Earth age:
+		<input id="earth_age" gtbfieldid="2" name="earth_age" size="4" type="text" /> 
+		years.</p>
+		<p class="style2">
+		<input name="Submit2" onclick="CalculateAge()" type="button" value="Calculate" />
+		<input name="Submit3" type="reset" value="Reset" /> <br />
+		</p>
+		<span class="mainbody"></span>
+		<table align="center" cellpadding="4" class="datatable">
+			<tr class="datatable">
+				<th class="style1">Planet</th>
+				<th class="style1">Age</th>
+			</tr>
+			<tr>
+				<td class="style1">Mercury</td>
+				<td class="datatable">
+				<div class="style1">
+					<input id="mercury_age" gtbfieldid="3" name="mercury_age" size="4" type="text" /> 
+					years</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="style1">Venus</td>
+				<td class="datatable">
+				<div class="style1">
+					<input id="venus_age" gtbfieldid="4" name="venus_age" size="4" type="text" /> 
+					years</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="style1">Mars</td>
+				<td class="datatable">
+				<div class="style1">
+					<input id="mars_age" gtbfieldid="5" name="mars_age" size="4" type="text" /> 
+					years</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="style1">Jupiter</td>
+				<td class="datatable">
+				<div class="style1">
+					<input id="jupiter_age" gtbfieldid="6" name="jupiter_age" size="4" type="text" /> 
+					years</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="style1">Saturn</td>
+				<td class="datatable">
+				<div class="style1">
+					<input id="saturn_age" gtbfieldid="7" name="saturn_age" size="4" type="text" /> 
+					years</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="style1">Uranus</td>
+				<td class="datatable">
+				<div class="style1">
+					<input id="uranus_age" gtbfieldid="8" name="uranus_age" size="4" type="text" /> 
+					years</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="style1">Neptune</td>
+				<td class="datatable">
+				<div class="style1">
+					<input id="neptune_age" gtbfieldid="9" name="neptune_age" size="4" type="text" /> 
+					years</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="style1">Pluto</td>
+				<td class="datatable">
+				<div class="style1">
+					<input id="pluto_age" gtbfieldid="10" name="pluto_age" size="4" type="text" /> 
+					years</div>
+				</td>
+			</tr>
+		</table>
+          <script language="JavaScript">
+		  document.forms.age.earth_age.focus();
+		  
+		  function CalculateAge() {
+		  form1=document.forms.age;
+
+		earth_age = form1.earth_age.value
+		earth_age_days = earth_age * 365.25;
+		
+		mercury_age = earth_age_days / 88;
+		form1.mercury_age.value = Math.round( mercury_age * 100)/100;
+		
+		venus_age = earth_age_days / 243;
+		form1.venus_age.value = Math.round( venus_age * 100)/100;
+		
+		mars_age = earth_age_days / 687;
+		form1.mars_age.value = Math.round( mars_age * 100)/100;
+		
+		jupiter_age = earth_age / 12;
+		form1.jupiter_age.value = Math.round( jupiter_age * 100)/100;
+		
+		saturn_age = earth_age / 29;
+		form1.saturn_age.value = Math.round( saturn_age * 100)/100;
+		
+		uranus_age = earth_age / 84;
+		form1.uranus_age.value = Math.round( uranus_age * 100)/100;
+		
+		neptune_age = earth_age / 164;
+		form1.neptune_age.value = Math.round( neptune_age * 100)/100;
+		
+		pluto_age = earth_age / 247.7;
+		form1.pluto_age.value = Math.round( pluto_age * 100)/100;
+		}
+	</script>
+      </div>
+</form>
+
+</body>
+
+</html>
