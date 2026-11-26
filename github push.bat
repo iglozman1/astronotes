@@ -14,16 +14,16 @@ git status --porcelain > "%TEMP%\git_changes.txt"
 for %%A in ("%TEMP%\git_changes.txt") do set SIZE=%%~zA
 
 if "%SIZE%"=="0" (
-    echo No local changes to commit.
+    echo No local changes to commit or push.
     del "%TEMP%\git_changes.txt" >nul 2>&1
     pause
     exit /b 0
 )
 
 echo ==================================================
-echo Files to be committed:
+echo Changed files to be committed and pushed:
 echo ==================================================
-git status --short
+for /f "tokens=1,* delims= " %%A in ('git status --short') do echo   - %%B
 echo ==================================================
 echo.
 
@@ -50,13 +50,6 @@ if errorlevel 1 (
 )
 
 echo.
-echo ==================================================
-echo Files included in this commit:
-echo ==================================================
-git show --stat --oneline HEAD
-echo ==================================================
-echo.
-
 echo Pushing to origin main...
 git push origin main
 if errorlevel 1 (
@@ -67,6 +60,12 @@ if errorlevel 1 (
 )
 
 echo.
-echo Push completed successfully.
+echo ==================================================
+echo Pushed these files:
+echo ==================================================
+for /f "delims=" %%F in ('git diff-tree --no-commit-id --name-only -r HEAD') do echo   - %%F
+echo ==================================================
+echo.
+
 del "%TEMP%\git_changes.txt" >nul 2>&1
 pause
